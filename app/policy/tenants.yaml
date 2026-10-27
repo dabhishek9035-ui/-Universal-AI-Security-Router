@@ -1,0 +1,9 @@
+# Tenant registry: api_key -> tenant -> policy file name.
+# Replace dev keys with real secrets before any deployment.
+default:
+  api_key: dev-default-key
+  policy: default
+
+acme:
+  api_key: dev-acme-key
+  policy: acme   # no acme.yaml yet -> falls back to default.yaml

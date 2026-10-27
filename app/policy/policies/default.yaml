@@ -1,0 +1,29 @@
+version: 1
+description: Default policy — precision-first baseline; tune per tenant.
+rules:
+  - detector: prompt_injection
+    above: 0.85
+    action: block
+  - detector: prompt_injection
+    above: 0.55
+    action: flag
+  - detector: pii
+    above: 0.5
+    action: redact
+  - detector: phishing
+    above: 0.8
+    action: block
+  - detector: phishing
+    above: 0.55
+    action: flag
+  - detector: log_anomaly
+    above: 0.75
+    action: flag
+  - detector: log_anomaly
+    above: 0.9
+    action: escalate
+  - detector: malware
+    above: 0.8
+    action: block
+denylist: []
+allowlist: []
